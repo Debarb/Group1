@@ -66,11 +66,11 @@ function OnTriggerEnter(col : Collider)
         controller.Move(movement * Time.deltaTime);
 
       //  print(GameObject.FindGameObjectsWithTag("Enemy").Length);
-     /*   if(GameObject.FindGameObjectsWithTag("Enemy").Length == 1)
+        /*if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
             Application.LoadLevel("SI_Win");
-        }
-        */
+        }*/
+        
         
 
     //print(GameObject.FindGameObjectsWithTag("Enemy"));
