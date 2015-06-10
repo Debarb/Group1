@@ -13,8 +13,6 @@ var bump : AudioClip;
 RequireComponent(AudioSource);
 
 
-
-
 function Start () 
 {
     controller = GetComponent(CharacterController);
@@ -41,19 +39,7 @@ function OnTriggerEnter(col : Collider)
             {
                 GetComponent.<AudioSource>().PlayOneShot(bump);
             }
-        }
-    /*function OnCollisionEnter(collision : Collision)
-        {
-          //  if(collision)
-            //  GetComponent.<AudioSource>().PlayOneShot(bump);
-            GetComponent.<AudioSource>().PlayOneShot(fire);
-        }*/
-
-
-    /*function OnDestroy()
-    {
-        transform.parent.gameObject.AddComponent<GameLose>();
-    }*/
+        }   
 
     function Update () 
     {
@@ -63,26 +49,10 @@ function OnTriggerEnter(col : Collider)
 	
         movement *= 7;
 	
-        controller.Move(movement * Time.deltaTime);
-
-      //  print(GameObject.FindGameObjectsWithTag("Enemy").Length);
-        /*if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
-        {
-            Application.LoadLevel("SI_Win");
-        }*/
-        
+        controller.Move(movement * Time.deltaTime);     
         
 
-    //print(GameObject.FindGameObjectsWithTag("Enemy"));
-    /*if(GameObject.FindGameObjectsWithTag("Enemy") == 0);
-    {
-        Application.LoadLevel(0);
-    }*/
-
-   
-
-
-    if (Input.GetKeyUp("space") || Input.GetKeyUp("up") && Time.time > nextFire)
+    if (Input.GetKeyUp("space") && Time.time > nextFire)
         {
             var spawn_bullet = Instantiate (bullet, transform.position, Quaternion.identity);
             spawn_bullet.GetComponent.<Rigidbody>().AddForce(Vector3.up * 155);//115

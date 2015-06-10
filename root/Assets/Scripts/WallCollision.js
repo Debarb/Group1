@@ -1,4 +1,4 @@
-﻿#pragma strict
+﻿/*#pragma strict
 var bump : AudioClip;
 RequireComponent(AudioSource);
 
@@ -13,4 +13,4 @@ function OnCollisionEnter(collision : Collision)
     }
 function Update () {
 
-}
+}*/
